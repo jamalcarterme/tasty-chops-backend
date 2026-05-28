@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: tastychops-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: ADMIN_EMAIL
+        value: info@tastychops.com
+      - key: ADMIN_PASSWORD
+        value: Tastychops102
+      - key: FRONTEND_URL
+        sync: false
