@@ -21,9 +21,9 @@ async function protect(req, res, next) {
   }
 }
 
-function requireAdmin(req, res, next) {
+function adminOnly(req, res, next) {
   if (req.user && req.user.role === 'admin') return next();
   return res.status(403).json({ error: 'Admin access required' });
 }
 
-module.exports = { protect, requireAdmin };
+module.exports = { protect, adminOnly };
